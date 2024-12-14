@@ -22,6 +22,9 @@
     };
     gh.enable = true;
   };
+  home.packages = with pkgs; [
+    gitmoji-cli
+  ];
   home.shellAliases = {
     lg = "lazygit";
     gP = "git push";

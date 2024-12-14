@@ -13,6 +13,9 @@
     stateVersion = 5;
     defaults = {
       NSGlobalDomain.AppleShowAllExtensions = true;
+      controlcenter = {
+        BatteryShowPercentage = true;
+      };
       finder = {
         AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
@@ -62,6 +65,7 @@
       "vlc" "arduino-ide" "bitwarden"
       "android-studio" "github" "postman"
       "sequel-ace" "tailscale" "wakatime"
+      "minecraft" "osu" "spike"
     ];
   };
 
