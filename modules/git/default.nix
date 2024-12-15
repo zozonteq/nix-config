@@ -24,6 +24,7 @@
   };
   home.packages = with pkgs; [
     gitmoji-cli
+    commitizen
   ];
   home.shellAliases = {
     lg = "lazygit";
