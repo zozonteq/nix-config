@@ -34,5 +34,6 @@
     lg = "lazygit";
     gP = "git push";
     gv = "gh repo view --web";
+    gc = "gitmoji -c";
   };
 }
