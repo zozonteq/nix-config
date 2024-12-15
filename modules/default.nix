@@ -9,5 +9,6 @@
     ./zsh
     ./cli-packages
     ./git
+    ./wezterm
   ];
 }
