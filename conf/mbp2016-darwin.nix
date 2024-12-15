@@ -43,7 +43,6 @@
         wvous-br-corner = 4;
         wvous-tl-corner = 2;
         wvous-tr-corner = 11;
-
       };
       screencapture = {
         disable-shadow = true;
@@ -59,13 +58,27 @@
       autoUpdate = true;
     };
     casks = [
-      "firefox" "raycast" "obsidian" 
-      "notion" "discord" "spotify" 
-      "blender" "meshlab" "iterm2"
-      "vlc" "arduino-ide" "bitwarden"
-      "android-studio" "github" "postman"
-      "sequel-ace" "tailscale" "wakatime"
-      "minecraft" "osu" "spike"
+      "firefox"
+      "raycast"
+      "obsidian"
+      "notion"
+      "discord"
+      "spotify"
+      "blender"
+      "meshlab"
+      "iterm2"
+      "vlc"
+      "arduino-ide"
+      "bitwarden"
+      "android-studio"
+      "github"
+      "postman"
+      "sequel-ace"
+      "tailscale"
+      "wakatime"
+      "minecraft"
+      "osu"
+      "spike"
     ];
   };
 

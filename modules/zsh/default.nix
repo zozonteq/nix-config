@@ -1,5 +1,9 @@
-{lib, config, pkgs, ...}:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -11,6 +15,6 @@
     };
   };
   programs.starship = {
-    enable = true; 
+    enable = true;
   };
 }
