@@ -30,6 +30,8 @@
       vim.tabline.nvimBufferline.enable = true;
       vim.languages = {
         enableFormat = true; # enable formatting for languages
+        enableLSP = true;
+        enableTreesitter = true;
         rust.enable = true;
         nix = {
           enable = true;
@@ -37,10 +39,15 @@
           format.enable = true;
           treesitter.enable = true;
         };
-        ts.enable = true;
+        ts = {
+          enable = true;
+          extensions.ts-error-translator.enable = true;
+          format.type = "prettier";
+        };
         clang.enable = true;
         python.enable = true;
         html.enable = true;
+        bash.enable = true;
         lua.enable = true;
       };
       vim.useSystemClipboard = true;
