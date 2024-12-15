@@ -18,6 +18,15 @@
         visuals = {
           indentBlankline.enable = true;
         };
+        utility = {
+          preview = {
+            markdownPreview = {
+              enable = true;
+              autoStart = true;
+              autoClose = true;
+            };
+          };
+        };
         ui = {
           noice.enable = true;
           colorizer.enable = true;
