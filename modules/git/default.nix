@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   programs = {
     lazygit = {
       enable = true;
@@ -33,6 +34,7 @@
   home.shellAliases = {
     lg = "lazygit";
     gP = "git push";
+    gp = "git pull";
     gv = "gh repo view --web";
     gc = "gitmoji -c";
   };
