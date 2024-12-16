@@ -18,6 +18,9 @@
       lz-n = {
         enable = true;
       };
+      wakatime = {
+        enable = true;
+      };
       # statusbar
       lualine = {
         enable = true;
