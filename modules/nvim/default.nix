@@ -3,6 +3,11 @@
     enable = true;
     settings = {
       vim = {
+        options = {
+          tabstop = 2;
+          shiftwidth = 2;
+          expandtab = true;
+        };
         viAlias = true;
         vimAlias = true;
         lsp = {
