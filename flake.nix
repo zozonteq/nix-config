@@ -23,8 +23,22 @@
         system = "x86_64-darwin";
         modules = [ ./conf/mbp2016-darwin.nix ];
       };
+      mba2023 = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        module = [ ./conf/mbp2016-darwin.nix ];
+      };
     };
     homeConfigurations = {
+      mba2023 = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "aarch64-darwin";
+          config.allowUnFree = true;
+        };
+        modules = [
+          nvf.homeManagerModules.default
+          ./conf/mbp2016-home.nix
+        ];
+      };
       mbp2016 = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-darwin";
