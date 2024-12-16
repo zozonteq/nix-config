@@ -34,7 +34,6 @@
         persistent-apps = [
           "/Applications/Firefox.app"
           "/Applications/Discord.app"
-          "/Applications/iTerm.app"
         ];
         slow-motion-allowed = false;
         tilesize = 48;
@@ -79,6 +78,12 @@
       "minecraft"
       "osu"
       "spike"
+      "UTM"
+      "google-chrome"
+      "google-drive"
+      "imhex"
+      "zoom"
+      "microsoft-teams"
     ];
   };
 
