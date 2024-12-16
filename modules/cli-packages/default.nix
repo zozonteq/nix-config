@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     fzf
     ffmpeg
@@ -19,6 +20,13 @@
     ripgrep
     gcc
     cmake
+    # formatters
+    nixfmt-rfc-style
+    isort
+    black
+    stylua
+    prettierd
+    biome
   ];
   home.shellAliases = {
     "ls" = "eza --icons";
