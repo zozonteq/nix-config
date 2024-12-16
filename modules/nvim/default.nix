@@ -13,8 +13,8 @@
         lsp = {
           enable = true;
           formatOnSave = true;
-          null-ls.enable = true;
           lspkind.enable = true;
+          null-ls.enable = true;
         };
         autocomplete.nvim-cmp = {
           enable = true;
@@ -35,15 +35,16 @@
         ui = {
           noice.enable = true;
           colorizer.enable = true;
+          illuminate.enable = true;
           breadcrumbs = {
             enable = true;
             lualine.winbar.enable = true;
             lualine.winbar.alwaysRender = true;
+            alwaysRender = true;
           };
         };
         statusline.lualine = {
           enable = true;
-          theme = "iceberg";
         };
         autopairs.nvim-autopairs.enable = true;
         tabline.nvimBufferline.enable = true;
@@ -77,10 +78,13 @@
           nvim-autopairs
         ];
         lazy.plugins = with pkgs.vimPlugins; {
-          "iceberg.vim" = {
-            package = iceberg-vim;
+          "catppuccin-nvim" = {
+            package = catppuccin-nvim;
             lazy = true;
             event = ["VimEnter"];
+            after = ''
+              vim.cmd("colorscheme catppuccin-macchiato")
+            '';
           };
           "aerial.nvim" = {
             package = aerial-nvim;
