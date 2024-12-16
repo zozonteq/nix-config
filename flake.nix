@@ -10,22 +10,27 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
     home-manager,
     nix-darwin,
     nvf,
+    nixvim,
     ...
   }: {
     darwinConfigurations = {
-      mbp2016 = nix-darwin.lib.darwinSystem{
+      mbp2016 = nix-darwin.lib.darwinSystem {
         system = "x86_64-darwin";
-        modules = [ ./conf/mbp2016-darwin.nix ];
+        modules = [./conf/mbp2016-darwin.nix];
       };
       mba2023 = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        module = [ ./conf/mbp2016-darwin.nix ];
+        module = [./conf/mbp2016-darwin.nix];
       };
     };
     homeConfigurations = {
@@ -35,6 +40,7 @@
           config.allowUnFree = true;
         };
         modules = [
+          nixvim.homeManagerModules.default
           nvf.homeManagerModules.default
           ./conf/mbp2016-home.nix
         ];
@@ -45,6 +51,7 @@
           config.allowUnFree = true;
         };
         modules = [
+          nixvim.homeManagerModules.default
           nvf.homeManagerModules.default
           ./conf/mbp2016-home.nix
         ];

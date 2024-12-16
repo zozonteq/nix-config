@@ -84,6 +84,7 @@
       "imhex"
       "zoom"
       "microsoft-teams"
+      "obs"
     ];
   };
 
