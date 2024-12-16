@@ -1,109 +1,139 @@
-{pkgs, ...}: {
-  programs.nvf = {
+{ nixvim, ... }:
+{
+  programs.nixvim = {
+    opts = {
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+    };
     enable = true;
-    settings = {
-      vim = {
-        options = {
-          tabstop = 2;
-          shiftwidth = 2;
-          expandtab = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    withNodeJs = true;
+    withPython3 = true;
+    colorschemes.catppuccin.enable = true;
+    plugins = {
+      # lazy loader
+      lz-n = {
+        enable = true;
+      };
+      # statusbar
+      lualine = {
+        enable = true;
+      };
+      # bufferbar
+      bufferline = {
+        enable = true;
+      };
+      # winbar
+      barbecue = {
+        enable = true;
+        settings = {
         };
-        viAlias = true;
-        vimAlias = true;
-        lsp = {
-          enable = true;
-          formatOnSave = true;
-          lspkind.enable = true;
-          null-ls.enable = true;
+      };
+      # better scrolling
+      neoscroll = {
+        enable = true;
+        settings = {
+          easing = "sine";
         };
-        autocomplete.nvim-cmp = {
-          enable = true;
-        };
-        filetree.nvimTree.enable = true;
-        visuals = {
-          indentBlankline.enable = true;
-        };
-        utility = {
-          preview = {
-            markdownPreview = {
-              enable = true;
-              autoStart = true;
-              autoClose = true;
-            };
+        lazyLoad = {
+          settings = {
+            event = "BufEnter";
           };
         };
-        ui = {
-          noice.enable = true;
-          colorizer.enable = true;
-          illuminate.enable = true;
-          breadcrumbs = {
-            enable = true;
-            lualine.winbar.enable = true;
-            lualine.winbar.alwaysRender = true;
-            alwaysRender = true;
-          };
-        };
-        statusline.lualine = {
-          enable = true;
-        };
-        autopairs.nvim-autopairs.enable = true;
-        tabline.nvimBufferline.enable = true;
-        languages = {
-          enableFormat = true; # enable formatting for languages
-          enableLSP = true;
-          enableTreesitter = true;
-          rust.enable = true;
-          nix = {
-            enable = true;
-            lsp.enable = true;
-            format.enable = true;
-            treesitter.enable = true;
-          };
-          ts = {
-            enable = true;
-            extensions.ts-error-translator.enable = true;
-            format.type = "prettier";
-          };
-          clang.enable = true;
-          python.enable = true;
-          html.enable = true;
-          bash.enable = true;
-          lua.enable = true;
-        };
-        useSystemClipboard = true;
-        telescope.enable = true;
-        startPlugins = with pkgs.vimPlugins; [
-          nvim-treesitter
-          vim-wakatime
-          nvim-autopairs
-        ];
-        lazy.plugins = with pkgs.vimPlugins; {
-          "catppuccin-nvim" = {
-            package = catppuccin-nvim;
-            lazy = true;
-            event = ["VimEnter"];
-            after = ''
-              vim.cmd("colorscheme catppuccin-macchiato")
-            '';
-          };
-          "aerial.nvim" = {
-            package = aerial-nvim;
-            setupModule = "aerial";
-            setupOpts = {
-              option_name = true;
-            };
-            lazy = true;
-            cmd = ["AerualOpen"];
-            event = ["BufEnter"];
-
+      };
+      indent-blankline = {
+        enable = true;
+      };
+      # icons
+      web-devicons = {
+        enable = true;
+      };
+      # terminal
+      toggleterm = {
+        enable = true;
+        lazyLoad = {
+          settings = {
+            cmd = "ToggleTerm";
             keys = [
-              {
-                key = "<leader>a";
-                action = ":AerialToggle<CR>";
-                mode = "";
-              }
+              "<c-t>"
             ];
           };
+        };
+      };
+
+      nvim-autopairs = {
+        enable = true;
+        lazyLoad = {
+          settings = {
+            enable = true;
+          };
+        };
+      };
+      treesitter = {
+        enable = true;
+      };
+      # cmp
+      blink-cmp = {
+        enable = true;
+        settings = {
+          keymap = {
+            "<Tab>" = [
+              "select_next"
+              "fallback"
+            ];
+            "<S-Tab>" = [
+              "select_prev"
+              "fallback"
+            ];
+            "<CR>" = [
+              "accept"
+              "fallback"
+            ];
+          };
+          completion = {
+            list = {
+              selection = "auto_insert";
+            };
+          };
+        };
+      };
+      # formatter
+      conform-nvim = {
+        enable = true;
+        settings = {
+          formatters_by_ft = {
+            lua = [ "stylua" ];
+            python = [
+              "isort"
+              "black"
+            ];
+            nix = [ "nixfmt" ];
+            typescript = [
+              "biome"
+              "prettierd"
+            ];
+          };
+          format_on_save = {
+            timeout_ms = 500;
+            lsp_format = "fallback";
+          };
+          default_format_opts = {
+            lsp_format = "fallback";
+          };
+        };
+      };
+      # laugnages
+      lsp = {
+        enable = true;
+        servers = {
+          ts_ls.enable = true;
+          nil_ls.enable = true;
+          clangd.enable = true;
+          pylsp.enable = true;
+          bashls.enable = true;
         };
       };
     };
