@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   nix = {
     optimise.automatic = true;
     settings = {
@@ -88,9 +89,4 @@
     ];
   };
 
-  fonts = {
-    packages = with pkgs; [
-      hackgen-nf-font
-    ];
-  };
 }
