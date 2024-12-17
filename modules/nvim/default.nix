@@ -1,4 +1,4 @@
-{ nixvim, ... }:
+{ pkgs, nixvim, ... }:
 {
   programs.nixvim = {
     opts = {
@@ -12,6 +12,9 @@
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;
+    clipboard = {
+      register = "unnamedplus";
+    };
     colorschemes.catppuccin.enable = true;
     plugins = {
       # lazy loader
