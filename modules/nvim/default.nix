@@ -1,10 +1,16 @@
-{ pkgs, nixvim, ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    ripgrep
+  ];
   programs.nixvim = {
     opts = {
       tabstop = 2;
       shiftwidth = 2;
       expandtab = true;
+      number = true;
+      relativenumber = true;
+      scrolloff = 5;
     };
     enable = true;
     defaultEditor = true;
@@ -15,7 +21,7 @@
     clipboard = {
       register = "unnamedplus";
     };
-    colorschemes.catppuccin.enable = true;
+    colorschemes.cyberdream.enable = true;
     plugins = {
       # lazy loader
       lz-n = {
@@ -50,6 +56,10 @@
           };
         };
       };
+
+      oil = {
+        enable = true;
+      };
       indent-blankline = {
         enable = true;
       };
@@ -81,6 +91,9 @@
       treesitter = {
         enable = true;
       };
+      telescope = {
+        enable = true;
+      };
       # cmp
       blink-cmp = {
         enable = true;
@@ -106,6 +119,9 @@
           };
         };
       };
+      noice = {
+        enable = true;
+      };
       # formatter
       conform-nvim = {
         enable = true;
@@ -121,9 +137,17 @@
               "biome"
               "prettierd"
             ];
+            javascript = [
+              "biome"
+              "prettierd"
+            ];
+            jsx = [
+              "biome"
+              "prettierd"
+            ];
           };
           format_on_save = {
-            timeout_ms = 500;
+            timeout_ms = 1000;
             lsp_format = "fallback";
           };
           default_format_opts = {
