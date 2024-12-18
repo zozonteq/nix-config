@@ -5,7 +5,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:NotAShelf/nvf";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,50 +13,99 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
       nixpkgs,
       home-manager,
       nix-darwin,
-      nvf,
       nixvim,
+      nix-on-droid,
       ...
     }:
     {
-      darwinConfigurations = {
-        mbp2016 = nix-darwin.lib.darwinSystem {
-          system = "x86_64-darwin";
-          modules = [ ./conf/mbp2016-darwin.nix ];
-        };
-        mba2023 = nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          modules = [ ./conf/mbp2016-darwin.nix ];
-        };
-      };
-      homeConfigurations = {
-        mba2023 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            config.allowUnFree = true;
-          };
+      nixOnDroidConfigurations = {
+        droid-srv1 = nix-on-droid.lib.nixOnDroidConfiguration {
+          pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
-            nixvim.homeManagerModules.default
-            nvf.homeManagerModules.default
-            ./conf/mbp2016-home.nix
+            ./hosts/droid/srv1/default.nix
+            ./hosts/droid/shared.nix
+            ./home/droid.nix
           ];
         };
-        mbp2016 = home-manager.lib.homeManagerConfiguration {
+        droid-srv2 = nix-on-droid.lib.nixOnDroidConfiguration {
+          pkgs = import nixpkgs { system = "aarch64-linux"; };
+          modules = [
+            ./hosts/droid/srv2/default.nix
+            ./hosts/droid/shared.nix
+            ./home/droid.nix
+          ];
+        };
+        droid-srv3 = nix-on-droid.lib.nixOnDroidConfiguration {
+          pkgs = import nixpkgs { system = "aarch64-linux"; };
+          modules = [
+            ./hosts/droid/srv3/default.nix
+            ./hosts/droid/shared.nix
+            ./home/droid.nix
+          ];
+        };
+      };
+      darwinConfigurations = {
+        darwin-mac1 = nix-darwin.lib.darwinSystem {
+          system = "x86_64-darwin";
+          modules = [
+            ./hosts/darwin/shared.nix
+            ./hosts/darwin/mac1
+          ];
+        };
+        darwin-mac2 = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            ./hosts/darwin/shared.nix
+            ./hosts/darwin/mac2
+          ];
+        };
+      };
+      # todo: nixos configuration
+      homeConfigurations = {
+        darwin-mac1 = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             system = "x86_64-darwin";
             config.allowUnFree = true;
           };
           modules = [
             nixvim.homeManagerModules.default
-            nvf.homeManagerModules.default
-            ./conf/mbp2016-home.nix
+            ./home/shared.nix
+            ./home/darwin.nix
           ];
         };
+        darwin-mac2 = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+            config.allowUnFree = true;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home/darwin.nix
+          ];
+        };
+        linux-server1 = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+            config.allowUnFree = true;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home/linux.nix
+          ];
+        };
+
       };
     };
 }
