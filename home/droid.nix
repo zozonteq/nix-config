@@ -1,5 +1,4 @@
 { pkgs, ... }:
 {
-
-  home-manager.config = ./shared.nix;
+  home.packages = [ pkgs.cowsay ];
 }
