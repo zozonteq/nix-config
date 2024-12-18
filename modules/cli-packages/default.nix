@@ -6,6 +6,7 @@
 }:
 {
   home.packages = with pkgs; [
+    live-server
     fzf
     ffmpeg
     peco

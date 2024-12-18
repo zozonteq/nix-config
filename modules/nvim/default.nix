@@ -2,14 +2,17 @@
 {
   home.packages = with pkgs; [
     ripgrep
+    vscode-langservers-extracted
   ];
   programs.nixvim = {
     opts = {
       tabstop = 2;
+      softtabstop = 2;
       shiftwidth = 2;
       expandtab = true;
       number = true;
       relativenumber = true;
+      autoindent = true;
       scrolloff = 5;
     };
     enable = true;
@@ -145,6 +148,11 @@
               "biome"
               "prettierd"
             ];
+            html = [
+              "biome"
+              "prettierd"
+              "fallback"
+            ];
           };
           format_on_save = {
             timeout_ms = 1000;
@@ -155,6 +163,9 @@
           };
         };
       };
+      emmet = {
+        enable = false;
+      };
       # laugnages
       lsp = {
         enable = true;
@@ -164,7 +175,13 @@
           clangd.enable = true;
           pylsp.enable = true;
           bashls.enable = true;
+          emmet_language_server.enable = true;
+          tailwindcss.enable = true;
+          cssls.enable = true;
+          html.enable = true;
+          dockerls.enable = true;
         };
+
       };
     };
   };
