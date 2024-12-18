@@ -35,6 +35,7 @@
             nixvim.homeManagerModules.default
             ./hosts/droid/srv1/default.nix
             ./hosts/droid/shared.nix
+            ./home/shared.nix
             ./home/droid.nix
           ];
         };
@@ -44,6 +45,7 @@
             nixvim.homeManagerModules.default
             ./hosts/droid/srv2/default.nix
             ./hosts/droid/shared.nix
+            ./home/shared.nix
             ./home/droid.nix
           ];
         };
@@ -53,6 +55,7 @@
             nixvim.homeManagerModules.default
             ./hosts/droid/srv3/default.nix
             ./hosts/droid/shared.nix
+            ./home/shared.nix
             ./home/droid.nix
           ];
         };
