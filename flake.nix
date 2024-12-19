@@ -32,6 +32,7 @@
         droid-srv1 = nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
+            nixvim.homeManagerModules.default
             ./hosts/droid/srv1/default.nix
             ./hosts/droid/shared.nix
           ];
@@ -39,13 +40,16 @@
         droid-srv2 = nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
+            nixvim.homeManagerModules.default
             ./hosts/droid/srv2/default.nix
             ./hosts/droid/shared.nix
+
           ];
         };
         droid-srv3 = nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
+            nixvim.homeManagerModules.default
             ./hosts/droid/srv3/default.nix
             ./hosts/droid/shared.nix
           ];

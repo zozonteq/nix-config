@@ -5,7 +5,6 @@
   home-manager.config =
     { pkgs, ... }:
     {
-      modules = [ nixvim.homeManagerModules.default ];
       home.stateVersion = "24.05";
       imports = [ ../../modules/default.nix ];
       nixpkgs = {
