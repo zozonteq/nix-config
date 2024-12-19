@@ -21,6 +21,8 @@
     ripgrep
     gcc
     cmake
+    # utils
+    yt-dlp
     # formatters
     nixfmt-rfc-style
     isort
@@ -31,6 +33,13 @@
   ];
   home.shellAliases = {
     "ls" = "eza --icons";
-    "la" = "eza --icons -l";
+    "sl" = "eza --icons";
+    "la" = "eza --icons -a";
+    "al" = "eza --icons -a";
+    "ll" = "eza --icons -l";
+    "tree" = "eza --icons --tree";
+    "grep" = "ripgrep";
+    "cat" = "bat";
+    "cls" = "clear";
   };
 }
