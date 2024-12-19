@@ -1,16 +1,7 @@
-{ pkgs, nixvim, ... }:
+{ pkgs, nixvim,lib, ... }:
 {
-  home-manager.config =
-    { pkgs, ... }:
-    {
-      modules = [ nixvim.homeManagerModules.default ];
-      imports = [
-        nixvim.homeManagerModules.default
-        ../modules/default.nix
-      ];
-      home.stateVersion = "24.05";
-      nixpkgs = {
-        config.allowUnFree = true;
-      };
-    };
+home.homeDirectory = "/data/data/com.termux.nix/files/home";
+home.username = lib.mkForce "nix-on-droid";
+
+
 }
