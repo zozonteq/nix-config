@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:spikespaz-contrib/nix-darwin/patch-1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
