@@ -3,6 +3,7 @@
   home-manager.config =
     { pkgs, ... }:
     {
+      modules = [ nixvim.homeManagerModules.default ];
       imports = [
 
         nixvim.homeManagerModules.default
