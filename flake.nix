@@ -34,7 +34,6 @@
           modules = [
             ./hosts/droid/srv1/default.nix
             ./hosts/droid/shared.nix
-            ./home/droid.nix
           ];
         };
         droid-srv2 = nix-on-droid.lib.nixOnDroidConfiguration {
@@ -42,7 +41,6 @@
           modules = [
             ./hosts/droid/srv2/default.nix
             ./hosts/droid/shared.nix
-            ./home/droid.nix
           ];
         };
         droid-srv3 = nix-on-droid.lib.nixOnDroidConfiguration {
@@ -50,7 +48,6 @@
           modules = [
             ./hosts/droid/srv3/default.nix
             ./hosts/droid/shared.nix
-            ./home/droid.nix
           ];
         };
       };
