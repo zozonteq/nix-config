@@ -38,7 +38,7 @@
     "al" = "eza --icons -a";
     "ll" = "eza --icons -l";
     "tree" = "eza --icons --tree";
-    "grep" = "ripgrep";
+    "grep" = "rg";
     "cat" = "bat";
     "cls" = "clear";
   };
