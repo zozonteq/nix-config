@@ -92,8 +92,29 @@
           ];
         };
 
-
         droid-srv1 = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "aarch64-linux";
+            config.allowUnFree = true;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home/droid.nix
+          ];
+        };
+        droid-srv2 = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "aarch64-linux";
+            config.allowUnFree = true;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home/droid.nix
+          ];
+        };
+        droid-srv3 = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             system = "aarch64-linux";
             config.allowUnFree = true;
