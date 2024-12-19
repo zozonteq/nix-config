@@ -6,7 +6,7 @@
     { pkgs, ... }:
     {
       home.stateVersion = "24.05";
-      imports = [ ../modules/default.nix ];
+      imports = [ ../../modules/default.nix ];
       nixpkgs = {
         config.allowUnFree = true;
       };
