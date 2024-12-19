@@ -34,6 +34,7 @@
           modules = [
             ./hosts/droid/srv1/default.nix
             ./hosts/droid/shared.nix
+            nixvim.homeManagerModules.default
             ./home/droid.nix
           ];
         };
@@ -42,6 +43,7 @@
           modules = [
             ./hosts/droid/srv2/default.nix
             ./hosts/droid/shared.nix
+            nixvim.homeManagerModules.default
             ./home/droid.nix
           ];
         };
@@ -50,6 +52,7 @@
           modules = [
             ./hosts/droid/srv3/default.nix
             ./hosts/droid/shared.nix
+            nixvim.homeManagerModules.default
             ./home/droid.nix
           ];
         };
