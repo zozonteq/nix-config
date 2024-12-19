@@ -34,6 +34,7 @@
           modules = [
             ./hosts/droid/srv1/default.nix
             ./hosts/droid/shared.nix
+            ./home/droid.nix
           ];
         };
         droid-srv2 = nix-on-droid.lib.nixOnDroidConfiguration {
@@ -41,6 +42,7 @@
           modules = [
             ./hosts/droid/srv2/default.nix
             ./hosts/droid/shared.nix
+            ./home/droid.nix
           ];
         };
         droid-srv3 = nix-on-droid.lib.nixOnDroidConfiguration {
@@ -48,6 +50,7 @@
           modules = [
             ./hosts/droid/srv3/default.nix
             ./hosts/droid/shared.nix
+            ./home/droid.nix
           ];
         };
       };
@@ -102,41 +105,6 @@
             ./home/linux.nix
           ];
         };
-        droid-srv1 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            config.allowUnFree = true;
-          };
-          modules = [
-            nixvim.homeManagerModules.default
-            ./home/shared.nix
-            ./home/droid.nix
-          ];
-        };
-        droid-srv2 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            config.allowUnFree = true;
-          };
-          modules = [
-            nixvim.homeManagerModules.default
-            ./home/shared.nix
-            ./home/droid.nix
-          ];
-        };
-
-        droid-srv3 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            config.allowUnFree = true;
-          };
-          modules = [
-            nixvim.homeManagerModules.default
-            ./home/shared.nix
-            ./home/droid.nix
-          ];
-        };
-
       };
     };
 }
