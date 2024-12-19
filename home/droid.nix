@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.cowsay ];
   home-manager.config =
     { pkgs, ... }:
     {
