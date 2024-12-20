@@ -11,7 +11,7 @@ nix shell nixpkgs#git
 git clone <THIS_REPO>
 cd nix-config
 nix-on-droid switch --flake .#droid-srv1
-nix run nixpkgs#home-manager -- switch --flake .#android-srv1
+nix run nixpkgs#home-manager -- switch --flake .#droid-srv1
 ```
 # setup for MacOS
 ```
