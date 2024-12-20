@@ -86,7 +86,6 @@
       "zoom"
       "microsoft-teams"
       "obs"
-      "typst"
     ];
   };
 

@@ -23,6 +23,7 @@
     cmake
     # utils
     yt-dlp
+    typst
     # formatters
     nixfmt-rfc-style
     isort

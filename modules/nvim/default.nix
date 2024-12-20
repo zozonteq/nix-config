@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     ripgrep
     vscode-langservers-extracted
+    tinymist
   ];
   programs.nixvim = {
     opts = {
@@ -25,6 +26,7 @@
       register = "unnamedplus";
     };
     colorschemes.cyberdream.enable = true;
+
     plugins = {
       # lazy loader
       lz-n = {
@@ -125,6 +127,9 @@
       noice = {
         enable = true;
       };
+      typst-vim = {
+        enable = true;
+      };
       # formatter
       conform-nvim = {
         enable = true;
@@ -180,9 +185,14 @@
           cssls.enable = true;
           html.enable = true;
           dockerls.enable = true;
+          tinymist.enable = true;
         };
 
       };
     };
+    extraPlugins = [
+      pkgs.vimPlugins.typst-preview-nvim
+    ];
+
   };
 }
