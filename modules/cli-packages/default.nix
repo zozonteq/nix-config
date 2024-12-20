@@ -38,6 +38,8 @@
     "al" = "eza --icons -a";
     "ll" = "eza --icons -l";
     "tree" = "eza --icons --tree";
+    "lt" = "eza --icons --tree";
+    "tl" = "eza --icons --tree";
     "grep" = "rg";
     "cat" = "bat";
     "cls" = "clear";
