@@ -86,6 +86,7 @@
       "zoom"
       "microsoft-teams"
       "obs"
+      "lego-mindstorms-ev3"
     ];
   };
 
