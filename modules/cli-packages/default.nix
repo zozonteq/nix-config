@@ -23,6 +23,7 @@
     # dev tools
     live-server
     android-tools
+    tmux
     # utils
     ffmpeg
     yt-dlp
@@ -36,7 +37,10 @@
     stylua # formatter for lua
     prettierd # formatter for web dev
     biome # formatter for web dev
+    hackgen-nf-font
+    fontconfig
   ];
+
   home.shellAliases = {
     "ls" = "eza --icons";
     "sl" = "eza --icons";
