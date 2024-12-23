@@ -6,31 +6,36 @@
 }:
 {
   home.packages = with pkgs; [
-    live-server
     fzf
-    ffmpeg
     peco
     unzip
     fastfetch
     htop
     screen
+    bat
+    ripgrep
+    eza
+    # developer env
     python3
     bun
-    bat
-    eza
-    ripgrep
     gcc
     cmake
+    # dev tools
+    live-server
+    android-tools
     # utils
+    ffmpeg
     yt-dlp
     typst
+    pandoc
+    scrcpy
     # formatters
-    nixfmt-rfc-style
-    isort
-    black
-    stylua
-    prettierd
-    biome
+    nixfmt-rfc-style # nix formatter
+    isort # formatter for python
+    black # formatter for python
+    stylua # formatter for lua
+    prettierd # formatter for web dev
+    biome # formatter for web dev
   ];
   home.shellAliases = {
     "ls" = "eza --icons";
