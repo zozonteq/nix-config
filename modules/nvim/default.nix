@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
     ripgrep
@@ -186,6 +189,7 @@
           html.enable = true;
           dockerls.enable = true;
           tinymist.enable = true;
+          lua_ls.enable = true;
         };
 
       };
