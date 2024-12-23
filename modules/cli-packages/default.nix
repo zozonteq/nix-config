@@ -21,6 +21,7 @@
     ripgrep
     gcc
     cmake
+    tmux
     # utils
     yt-dlp
     # formatters
@@ -30,7 +31,10 @@
     stylua
     prettierd
     biome
+    hackgen-nf-font
+    fontconfig
   ];
+
   home.shellAliases = {
     "ls" = "eza --icons";
     "sl" = "eza --icons";
