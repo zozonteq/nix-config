@@ -20,6 +20,7 @@
     bun
     gcc
     cmake
+    lua
     # dev tools
     live-server
     android-tools

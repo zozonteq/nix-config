@@ -87,6 +87,9 @@
           };
         };
       };
+      transparent = {
+        enable = true;
+      };
 
       nvim-autopairs = {
         enable = true;
