@@ -43,9 +43,9 @@
   ];
 
   home.shellAliases = {
-    "ls" = "eza --icons";
-    "sl" = "eza --icons";
-    "la" = "eza --icons -a";
+    "ls" = "eza --icons always";
+    "sl" = "eza --icons always";
+    "la" = "eza --icons -a ";
     "al" = "eza --icons -a";
     "ll" = "eza --icons -l";
     "tree" = "eza --icons --tree";
