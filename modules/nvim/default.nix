@@ -9,6 +9,9 @@
     tinymist
   ];
   programs.nixvim = {
+    globals = {
+      mapleader = " ";
+      };
     opts = {
       tabstop = 2;
       softtabstop = 2;
@@ -104,6 +107,10 @@
       };
       telescope = {
         enable = true;
+        keymaps = {
+          "<C-p>" = "find_files";
+          "<leader>fg" = "live_grep";
+        };
       };
       # cmp
       blink-cmp = {
