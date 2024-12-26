@@ -40,6 +40,9 @@
     biome # formatter for web dev
     hackgen-nf-font
     fontconfig
+    # security
+    hashcat
+    john
   ];
 
   home.shellAliases = {
