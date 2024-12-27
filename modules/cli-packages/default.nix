@@ -31,6 +31,7 @@
     typst
     pandoc
     scrcpy
+    p7zip
     # formatters
     nixfmt-rfc-style # nix formatter
     isort # formatter for python
