@@ -17,16 +17,20 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+    };
   };
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
-      nix-darwin,
       nixvim,
       nix-on-droid,
+      nix-darwin,
       ...
-    }:
+    }@inputs:
     {
       nixOnDroidConfigurations = {
         droid-srv1 = nix-on-droid.lib.nixOnDroidConfiguration {
@@ -64,6 +68,16 @@
           modules = [
             ./hosts/darwin/shared.nix
             ./hosts/darwin/mac2
+          ];
+        };
+      };
+      nixosConfigurations = {
+        g7 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/linux/g7
+            ./hosts/linux/shared.nix
           ];
         };
       };
@@ -123,6 +137,18 @@
             nixvim.homeManagerModules.default
             ./home/shared.nix
             ./home/droid.nix
+          ];
+        };
+
+        g7 = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnFree = true;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home/linux.nix
           ];
         };
         linux-server1 = home-manager.lib.homeManagerConfiguration {
