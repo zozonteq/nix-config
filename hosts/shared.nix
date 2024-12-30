@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  user.shell = "${pkgs.zsh}/bin/zsh";
+  nixpkgs.config.allowUnfree = true;
 }

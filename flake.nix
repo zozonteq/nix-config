@@ -77,6 +77,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/linux/g7
+            ./hosts/shared.nix
             ./hosts/linux/shared.nix
           ];
         };
@@ -148,6 +149,7 @@
           modules = [
             nixvim.homeManagerModules.default
             ./home/shared.nix
+            ./home/linux-desktop.nix
             ./home/linux.nix
           ];
         };

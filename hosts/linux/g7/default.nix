@@ -1,9 +1,12 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }:
 {
+  nixpkgs.config.allowUnfree = true;
+  networking.hostName = lib.mkDefault "g7";
   imports = [
     inputs.nix-minecraft.nixosModules.minecraft-servers
     ./hardware.nix
