@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 {
@@ -11,22 +12,27 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  #networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  services.tailscale.enable = true;
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
 
   # location
   time.timeZone = "Asia/Tokyo";
   i18n = {
     inputMethod = {
       enabled = "fcitx5";
-      fcitx5.addons = [ pkgs.fcitx5-mozc ];
+      fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+      ];
     };
     defaultLocale = "ja_JP.UTF-8";
     extraLocaleSettings = {
@@ -57,14 +63,12 @@
         ];
         sansSerif = [
           "Noto Sans CJK JP"
-          "Noto Color Emoji"
         ];
         monospace = [
           "HackGen Console NF"
           "Noto Color Emoji"
         ];
         emoji = [ "Noto Color Emoji" ];
-
       };
     };
 
@@ -76,8 +80,7 @@
   };
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.ly.enable = true;
 
   services.printing.enable = true;
 
@@ -106,15 +109,15 @@
     ];
     packages = with pkgs; [
       kdePackages.kate
-      #  thunderbird
+      kitty
     ];
     shell = pkgs.zsh;
   };
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
+  programs.hyprland.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.11";
-
 }

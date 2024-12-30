@@ -21,15 +21,19 @@
         openFirewall = true;
         package = pkgs.velocityServers.velocity;
         symlinks = {
+          "forwarding.secret" = pkgs.writeTextFile {
+            name = "forwarding.secret";
+            text = "secret";
+          };
           "velocity.toml" = pkgs.writeTextFile {
             name = "velocity.toml";
             text = ''
               config-version = "2.7"
               bind = "0.0.0.0:25565"
-              motd = "<#09add3>A Velocity Server Yes！"
+              motd = "<#09add3>A Proxy server built by nix-minecraft"
               show-max-players = 500
               online-mode = true
-              force-key-authentication = true
+              force-key-authentication = false
               prevent-client-proxy-connections = false
 
               # Should we forward IP addresses and other data to backend servers?
@@ -43,7 +47,8 @@
               #                  unable to implement network level firewalling (on a shared host).
               # - "modern":      Forward player IPs and UUIDs as part of the login process using
               #                  Velocity's native forwarding. Only applicable for Minecraft 1.13 or higher.
-              player-info-forwarding-mode = "none"
+              player-info-forwarding-mode = "modern"
+
 
               forwarding-secret-file = "forwarding.secret"
 
@@ -174,6 +179,8 @@
           motd = "A Lobby server";
           online-mode = false;
           server-port = 30066;
+          enforce-secure-profile = false;
+
         };
         package = pkgs.paperServers.paper-1_19_4;
         symlinks = {
@@ -186,6 +193,19 @@
             url = "https://github.com/SkinsRestorer/SkinsRestorer/releases/download/15.5.1/SkinsRestorer.jar";
             sha256 = "9390a8add16de2fbbdb49f6cb9677ce69cc9572d96c3077290a0f108519323b5";
             name = "SkinRestorer.jar";
+          };
+        };
+        files = {
+          "config/paper-global.yml".value = {
+            _version = 28;
+            proxies = {
+              proxy-protocol = false;
+              velocity = {
+                enabled = true;
+                online-mode = false;
+                secret = "secret";
+              };
+            };
           };
 
         };

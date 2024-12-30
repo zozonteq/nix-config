@@ -20,6 +20,7 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
   outputs =
     {
@@ -73,7 +74,9 @@
       };
       nixosConfigurations = {
         g7 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
           system = "x86_64-linux";
           modules = [
             ./hosts/linux/g7
@@ -145,6 +148,9 @@
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnFree = true;
+            overlays = [
+              inputs.hyprpanel.overlay
+            ];
           };
           modules = [
             nixvim.homeManagerModules.default
@@ -154,6 +160,7 @@
           ];
         };
         linux-server1 = home-manager.lib.homeManagerConfiguration {
+
           pkgs = import nixpkgs {
             system = "aarch64-darwin";
             config.allowUnFree = true;
