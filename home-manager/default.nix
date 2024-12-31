@@ -3,5 +3,6 @@
   programs.home-manager.enable = true;
   imports = [
     ./wallpaper.nix
+    ./kitty
   ];
 }

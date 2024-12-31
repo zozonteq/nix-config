@@ -1,6 +1,9 @@
 { pkgs, inputs, ... }:
 {
-  imports = [ inputs.ags.homeManagerModules.default ];
+  imports = [
+    inputs.ags.homeManagerModules.default
+    ./matugen.nix
+  ];
   programs.ags = {
     enable = true;
   };
@@ -15,7 +18,6 @@
     wl-clipboard
     btop
     brightnessctl
-    matugen
     swww
   ];
   home.file = {
@@ -28,25 +30,5 @@
       "wallpaper.enable" = true;
       "wallpaper.image" = "~/wallpapers/cyber.png";
     };
-    ".config/matugen/config.toml".text = ''
-      [config.wallpaper]
-      command = "swww"
-      arguments = ["img", "--transition-type", "center"]
-      set = true
-      [templates.hyprland]
-      input_path = "~/.config/matugen/colors.css"
-      output_path = "~/.config/hypr/colors.conf"
-      post_hook = "hyprctl reload"
-    '';
-    ".config/matugen/matugen-themes".source = fetchGit {
-      url = "https://github.com/InioX/matugen-themes";
-      rev = "e654163b51c75798cbcdfe5aa7c07dbc51614b0f";
-    };
-    ".config/matugen/colors.css".text = ''
-      <* for name, value in colors *>
-      @define-color {{name}} {{value.default.hex}};
-      <* endfor *>
-    '';
-
   };
 }
