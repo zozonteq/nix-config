@@ -21,6 +21,7 @@
       url = "github:Infinidoge/nix-minecraft";
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    ags.url = "github:Aylur/ags";
   };
   outputs =
     {
@@ -152,9 +153,13 @@
               inputs.hyprpanel.overlay
             ];
           };
+          extraSpecialArgs = {
+            inherit inputs;
+          };
           modules = [
             nixvim.homeManagerModules.default
             ./home/shared.nix
+            ./home-manager/default.nix
             ./home/linux-desktop.nix
             ./home/linux.nix
           ];

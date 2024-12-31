@@ -8,6 +8,7 @@
     ];
     exec-once = [
       "fcitx5 -D"
+      "hyprpanel sw ~/wallpapers/cyber.png"
       "${pkgs.hyprpanel}/bin/hyprpanel"
     ];
     decoration = {
