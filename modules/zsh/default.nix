@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -16,5 +17,13 @@
   };
   programs.starship = {
     enable = true;
+    settings = {
+      add_newline = true;
+      username = {
+        disabled = false;
+        style_user = "bright-white bold";
+        style_root = "bright-red bold";
+      };
+    };
   };
 }

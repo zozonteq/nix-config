@@ -52,6 +52,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       hackgen-nf-font
+      monocraft
     ];
     fontDir.enable = true;
     fontconfig = {
@@ -64,6 +65,7 @@
           "Noto Sans CJK JP"
         ];
         monospace = [
+          "Monocraft Nerd Font"
           "HackGen Console NF"
           "Noto Color Emoji"
         ];
@@ -116,6 +118,9 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.hyprland.enable = true;
+  environment.systemPackages = [
+    pkgs.easyeffects
+  ];
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.11";

@@ -7,6 +7,16 @@
       "$mainMod, Delete, exit,"
       "$mainMod, Q , killactive,"
       "$mainMod, Space, exec, rofi -show run"
+      "$mainMod, H, workspace, -1"
+      "$mainMod, L, workspace, +1"
+    ];
+    binde = [
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume  @DEFAULT_AUDIO_SINK@ 5%-"
+    ];
+    bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resiewindow"
     ];
   };
 }

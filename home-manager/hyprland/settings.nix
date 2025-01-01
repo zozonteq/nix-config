@@ -29,5 +29,7 @@
       ];
     };
 
+    #windowrulev2 = "float,class:.*";
+
   };
 }

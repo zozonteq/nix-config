@@ -20,6 +20,12 @@ in
       input_path = "~/${Matugen_Themes_Dir}/templates/kitty-colors.conf"
       output_path = "~/.config/kitty/colors.conf"
       post_hook = "kill -SIGUSR1 $(pidof kitty)"
+      [templates.gtk4]
+      input_path = "~/${Matugen_Themes_Dir}/templates/gtk-colors.css"
+      output_path = '~/.config/gtk-4.0/gtk.css'
+      [templates.gtk3]
+      input_path = "~/${Matugen_Themes_Dir}/templates/gtk-colors.css"
+      output_path = '~/.config/gtk-3.0/gtk.css'
     '';
 
     "${Matugen_Themes_Dir}/".source = fetchGit {
@@ -31,5 +37,7 @@ in
       @define-color {{name}} {{value.default.hex}};
       <* endfor *>
     '';
+    #    ".config/gtk-3.0/gtk.css".text = "@import 'colors.css'";
+    #    ".config/gtk-4.0/gtk.css".text = "@import 'colors.css'";
   };
 }

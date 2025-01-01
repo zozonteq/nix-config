@@ -3,6 +3,13 @@ let
 in
 {
   home.file = {
+    "${wallpaper_dir}/minecraft-village.png" = {
+      target = "${wallpaper_dir}/minecraft-village.png";
+      source = builtins.fetchurl {
+        url = "https://i.redd.it/gllpjsuq3wc61.png";
+        sha256 = "b4a9ac5fa8c11e82509e57a2fafce568c031fcf0fb49a9061a177e43d1f950f5";
+      };
+    };
     "${wallpaper_dir}/lucy.png" = {
       target = "${wallpaper_dir}/lucy.png";
       source = builtins.fetchurl {

@@ -19,6 +19,7 @@
     btop
     brightnessctl
     swww
+    upower
   ];
   home.file = {
     ".config/hyprpanel/config.json".text = builtins.toJSON {
