@@ -11,7 +11,7 @@
   programs.nixvim = {
     globals = {
       mapleader = " ";
-      };
+    };
     opts = {
       tabstop = 2;
       softtabstop = 2;
@@ -202,6 +202,9 @@
           lua_ls.enable = true;
         };
 
+      };
+      typescript-tools = {
+        enable = true;
       };
     };
     extraPlugins = [
