@@ -24,8 +24,10 @@
   home.file = {
     ".config/hyprpanel/config.json".text = builtins.toJSON {
       "theme.bar.floating" = false;
-      "theme.font.name" = "HackGen35 Console NF";
-      "theme.font.label" = "HackGen35 Console NF Bold";
+      #"theme.font.name" = "HackGen35 Console NF";
+      "theme.font.name" = "Monocraft Nerd Font";
+      #"theme.font.label" = "HackGen35 Console NF Bold";
+      "theme.font.label" = "Monocraft Nerd Font";
       "theme.font.size" = "1rem";
       "theme.matugen" = true;
       "wallpaper.enable" = true;
