@@ -1,5 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 {
   home.homeDirectory = "/Users/user";
-  home.packages = [ pkgs.cowsay ];
+  imports = [
+    ../home-manager/cli-packages
+    ../home-manager/nvim
+    ../home-manager/zsh
+    ../home-manager/git
+  ];
 }

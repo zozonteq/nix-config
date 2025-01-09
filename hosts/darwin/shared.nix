@@ -89,6 +89,7 @@
       "lego-mindstorms-ev3"
       "krita"
       "keyboardcleantool"
+      "ghostty"
     ];
   };
 

@@ -22,6 +22,7 @@
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     ags.url = "github:Aylur/ags";
+    ghostty.url = "github:ghostty-org/ghostty";
   };
   outputs =
     {

@@ -42,8 +42,6 @@
     hackgen-nf-font
     fontconfig
     # security
-    hashcat
-    john
     cloudflared
   ];
 
