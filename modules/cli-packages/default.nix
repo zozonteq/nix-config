@@ -44,6 +44,7 @@
     # security
     hashcat
     john
+    cloudflared
   ];
 
   home.shellAliases = {
