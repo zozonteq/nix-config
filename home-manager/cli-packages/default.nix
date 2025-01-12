@@ -1,12 +1,11 @@
 {
   pkgs,
-  lib,
-  config,
   ...
 }:
 {
   home.packages = with pkgs; [
-    fzf
+    # cli tools
+    fzf # ファジーファインダ
     peco
     unzip
     fastfetch
@@ -15,37 +14,53 @@
     bat
     ripgrep
     eza
-    # developer env
+    fd
+    btop
+    duf
+    tldr
+    wget
+    tmux
+    imgcat
+    lsix
+
+    # developing env
     python3
     bun
     gcc
     cmake
     lua
+
     # dev tools
     live-server
-    android-tools
-    tmux
+    android-tools # ADB, fastboot ...
+
     # utils
     ffmpeg
     yt-dlp
-    typst
-    pandoc
-    scrcpy
-    p7zip
+    typst # 組版エンジン
+    pandoc # ドキュメント変換ツール
+    scrcpy # ADB経由でAndroid端末を操作できる
+    p7zip # 7zip
+    w3m
+
     # formatters
-    nixfmt-rfc-style # nix formatter
-    isort # formatter for python
-    black # formatter for python
-    stylua # formatter for lua
-    prettierd # formatter for web dev
-    biome # formatter for web dev
+    nixfmt-rfc-style # nix
+    isort # python
+    black # python
+    stylua # lua
+    prettierd # webdev(JS,TS,HTML,CSS)
+    biome # webdev(JS,TS,HTML,CSS)
+
+    # font
     hackgen-nf-font
     fontconfig
-    # security
+
+    # cf
     cloudflared
   ];
 
   home.shellAliases = {
+    "l" = "eza --icons always";
     "ls" = "eza --icons always";
     "sl" = "eza --icons always";
     "la" = "eza --icons -a ";
@@ -55,7 +70,11 @@
     "lt" = "eza --icons --tree";
     "tl" = "eza --icons --tree";
     "grep" = "rg";
-    "cat" = "bat";
     "cls" = "clear";
+    "v" = "nvim";
+    "fz" = "fzf";
+    "xa" = "xargs";
+    "fzv" = "fzf | xargs vim";
+    "find" = "fd";
   };
 }

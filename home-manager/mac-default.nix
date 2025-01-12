@@ -9,5 +9,6 @@
     ./wezterm
     ./git
     ./zsh
+
   ];
 }
