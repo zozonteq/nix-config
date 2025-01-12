@@ -6,5 +6,6 @@
     ../home-manager/nvim
     ../home-manager/zsh
     ../home-manager/git
+    ../home-manager/ollama
   ];
 }
