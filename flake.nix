@@ -75,6 +75,17 @@
         };
       };
       nixosConfigurations = {
+        elitedesk = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/linux/elitedesk
+            ./hosts/shared.nix
+            ./hosts/linux/shared.nix
+          ];
+        };
         g7 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
@@ -146,6 +157,25 @@
           ];
         };
 
+        elitedesk= home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnFree = true;
+            overlays = [
+              inputs.hyprpanel.overlay
+            ];
+          };
+          extraSpecialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            nixvim.homeManagerModules.default
+            ./home/shared.nix
+            ./home-manager/default.nix
+            ./home/linux-desktop.nix
+            ./home/linux.nix
+          ];
+        };
         g7 = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
