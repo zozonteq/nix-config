@@ -31,6 +31,16 @@
         };
       }
     ];
+    initExtra = ''
+      r#(){
+        if [[$1 == r#*]]; then
+          cmd = "nix run nixpkgs#$\{1:2\}"
+          eval $cmd
+        else
+          echo "invalid command"
+        fi
+      }
+    '';
   };
   programs.starship = {
     enable = true;

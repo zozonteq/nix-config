@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/update/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-on-droid = {
@@ -157,7 +157,7 @@
           ];
         };
 
-        elitedesk= home-manager.lib.homeManagerConfiguration {
+        elitedesk = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnFree = true;
