@@ -29,6 +29,8 @@
     gcc
     cmake
     lua
+    clojure
+    leiningen
 
     # dev tools
     live-server

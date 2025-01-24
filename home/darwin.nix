@@ -7,5 +7,7 @@
     ../home-manager/zsh
     ../home-manager/git
     ../home-manager/ollama
+    ../home-manager/lima.nix
+    ../home-manager/docker.nix
   ];
 }

@@ -7,6 +7,7 @@
     ripgrep
     vscode-langservers-extracted
     tinymist
+    cljfmt
   ];
   programs.nixvim = {
     globals = {
@@ -140,6 +141,7 @@
         enable = true;
       };
       # formatter
+      # https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
       conform-nvim = {
         enable = true;
         settings = {
@@ -166,6 +168,9 @@
               "biome"
               "prettierd"
               "fallback"
+            ];
+            clojure = [
+              "cljfmt"
             ];
           };
           format_on_save = {
@@ -196,6 +201,7 @@
           dockerls.enable = true;
           tinymist.enable = true;
           lua_ls.enable = true;
+          clojure_lsp.enable = true;
         };
       };
       typescript-tools = {

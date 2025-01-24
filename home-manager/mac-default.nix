@@ -1,4 +1,4 @@
-{ home-manager, inputs, ... }:
+{ ... }:
 {
   programs.home-manager.enable = true;
   imports = [
@@ -9,6 +9,5 @@
     ./wezterm
     ./git
     ./zsh
-
   ];
 }

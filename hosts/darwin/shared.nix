@@ -12,6 +12,10 @@
 
   system = {
     stateVersion = 5;
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
     defaults = {
       NSGlobalDomain.AppleShowAllExtensions = true;
       controlcenter = {
@@ -90,6 +94,7 @@
       "krita"
       "keyboardcleantool"
       "ghostty"
+      "barrier"
     ];
   };
 

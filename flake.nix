@@ -35,6 +35,7 @@
       ...
     }@inputs:
     {
+      # nix-on-droid
       nixOnDroidConfigurations = {
         droid-srv1 = nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
@@ -58,6 +59,7 @@
           ];
         };
       };
+      # darwin
       darwinConfigurations = {
         darwin-mac1 = nix-darwin.lib.darwinSystem {
           system = "x86_64-darwin";
@@ -74,6 +76,7 @@
           ];
         };
       };
+      # nixos
       nixosConfigurations = {
         elitedesk = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -98,7 +101,7 @@
           ];
         };
       };
-      # todo: nixos configuration
+      # home-manager
       homeConfigurations = {
         darwin-mac1 = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
@@ -196,7 +199,6 @@
           ];
         };
         linux-server1 = home-manager.lib.homeManagerConfiguration {
-
           pkgs = import nixpkgs {
             system = "aarch64-darwin";
             config.allowUnFree = true;
