@@ -113,6 +113,12 @@
           "<leader>fg" = "live_grep";
         };
       };
+      diffview = {
+        enable = true;
+      };
+      gitsigns = {
+        enable = true;
+      };
       # cmp
       cmp = {
         enable = true;
