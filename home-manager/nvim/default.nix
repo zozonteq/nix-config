@@ -104,6 +104,9 @@
           };
         };
       };
+      ollama = {
+        enable = true;
+      };
       treesitter = {
         enable = true;
         settings = {
