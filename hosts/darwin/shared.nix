@@ -95,6 +95,7 @@
       "keyboardcleantool"
       "ghostty"
       "barrier"
+      "keycastr"
     ];
   };
 
