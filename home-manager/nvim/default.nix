@@ -8,6 +8,7 @@
     vscode-langservers-extracted
     tinymist
     cljfmt
+    phpactor
   ];
   programs.nixvim = {
     globals = {
@@ -105,6 +106,11 @@
       };
       treesitter = {
         enable = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+          incremental_selection.enable = true;
+        };
       };
       telescope = {
         enable = true;
@@ -117,6 +123,9 @@
         enable = true;
       };
       gitsigns = {
+        enable = true;
+      };
+      rainbow-delimiters = {
         enable = true;
       };
       # cmp
@@ -178,9 +187,12 @@
             clojure = [
               "cljfmt"
             ];
+            php = [
+              "php_cs_fixer"
+            ];
           };
           format_on_save = {
-            timeout_ms = 1000;
+            timeout_ms = 5000;
             lsp_format = "fallback";
           };
           default_format_opts = {
@@ -208,6 +220,7 @@
           tinymist.enable = true;
           lua_ls.enable = true;
           clojure_lsp.enable = true;
+          phpactor.enable = true;
         };
       };
       typescript-tools = {

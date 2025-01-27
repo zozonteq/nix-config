@@ -26,11 +26,20 @@
     # developing env
     python3
     bun
+    # c
     gcc
     cmake
+    # lua
     lua
+    # lisp(clojure)
     clojure
     leiningen
+
+    # php
+    php83
+    php83Packages.composer
+    php83Packages.php-cs-fixer
+    laravel
 
     # dev tools
     live-server
@@ -43,7 +52,7 @@
     pandoc # ドキュメント変換ツール
     scrcpy # ADB経由でAndroid端末を操作できる
     p7zip # 7zip
-    w3m
+    w3m # cli web browser
 
     # formatters
     nixfmt-rfc-style # nix
@@ -52,6 +61,7 @@
     stylua # lua
     prettierd # webdev(JS,TS,HTML,CSS)
     biome # webdev(JS,TS,HTML,CSS)
+    php83Packages.php-codesniffer
 
     # font
     hackgen-nf-font
