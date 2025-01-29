@@ -9,5 +9,6 @@
     ../home-manager/ollama
     ../home-manager/lima.nix
     ../home-manager/docker.nix
+    ../home-manager/nix-direnv.nix
   ];
 }
