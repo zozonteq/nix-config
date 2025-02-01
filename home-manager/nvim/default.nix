@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     ripgrep
@@ -9,6 +6,8 @@
     tinymist
     cljfmt
     phpactor
+    typescript
+    typescript-language-server
   ];
   programs.nixvim = {
     globals = {
@@ -23,6 +22,9 @@
       relativenumber = true;
       autoindent = true;
       scrolloff = 5;
+      swapfile = false;
+      backup = false;
+      writebackup = false;
     };
     enable = true;
     defaultEditor = true;
@@ -34,13 +36,15 @@
       register = "unnamedplus";
     };
     colorschemes.cyberdream.enable = true;
-
     plugins = {
       # lazy loader
       lz-n = {
         enable = true;
       };
       wakatime = {
+        enable = true;
+      };
+      presence-nvim = {
         enable = true;
       };
       # statusbar
@@ -69,7 +73,6 @@
           };
         };
       };
-
       oil = {
         enable = true;
       };
@@ -224,6 +227,14 @@
           lua_ls.enable = true;
           clojure_lsp.enable = true;
           phpactor.enable = true;
+        };
+      };
+      lint = {
+        enable = false;
+        lintersByFt = {
+          typescript = [
+            "biomejs"
+          ];
         };
       };
       typescript-tools = {
