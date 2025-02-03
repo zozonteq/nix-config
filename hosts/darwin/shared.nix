@@ -96,6 +96,7 @@
       "ghostty"
       "barrier"
       "keycastr"
+      "alt-tab"
     ];
   };
 
