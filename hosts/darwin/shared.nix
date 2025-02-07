@@ -61,6 +61,8 @@
     onActivation = {
       autoUpdate = true;
     };
+    brews = [
+    ];
     casks = [
       "firefox"
       "raycast"
@@ -69,34 +71,12 @@
       "discord"
       "spotify"
       "blender"
-      "meshlab"
-      "iterm2"
-      "vlc"
       "arduino-ide"
       "bitwarden"
       "android-studio"
-      "github"
-      "postman"
-      "sequel-ace"
-      "tailscale"
-      "wakatime"
-      "minecraft"
-      "osu"
-      "spike"
-      "UTM"
-      "google-chrome"
-      "google-drive"
-      "imhex"
-      "zoom"
-      "microsoft-teams"
-      "obs"
-      "lego-mindstorms-ev3"
-      "krita"
-      "keyboardcleantool"
-      "ghostty"
-      "barrier"
       "keycastr"
       "alt-tab"
+      "processing"
     ];
   };
 
