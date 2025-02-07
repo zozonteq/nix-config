@@ -26,6 +26,7 @@
     # developing env
     python3
     bun
+    deno
     # c
     gcc
     cmake
@@ -89,4 +90,9 @@
     "fzv" = "fzf | xargs vim";
     "find" = "fd";
   };
+  home.file.".config/direnv/direnv.toml".text = ''
+    [global]
+    # https://direnv.net/man/direnv.toml.1.html
+    hide_env_diff = true
+  '';
 }
