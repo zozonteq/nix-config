@@ -13,6 +13,12 @@
     globals = {
       mapleader = " ";
     };
+    keymaps = [
+      {
+        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+        key = "gn";
+      }
+    ];
     opts = {
       tabstop = 2;
       softtabstop = 2;
@@ -214,6 +220,7 @@
         enable = true;
         servers = {
           ts_ls.enable = true;
+          #denols.enable = true;
           nil_ls.enable = true;
           clangd.enable = true;
           pylsp.enable = true;
@@ -227,15 +234,14 @@
           lua_ls.enable = true;
           clojure_lsp.enable = true;
           phpactor.enable = true;
+          eslint = {
+            enable = true;
+          };
         };
       };
       lint = {
         enable = false;
-        lintersByFt = {
-          typescript = [
-            "biomejs"
-          ];
-        };
+        lintersByFt = { };
       };
       typescript-tools = {
         enable = true;
@@ -243,6 +249,7 @@
     };
     extraPlugins = [
       pkgs.vimPlugins.typst-preview-nvim
+      pkgs.vimPlugins.presence-nvim
     ];
 
   };
