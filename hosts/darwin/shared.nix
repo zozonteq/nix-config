@@ -34,7 +34,7 @@
         _FXSortFoldersFirst = true;
       };
       dock = {
-        autohide = false;
+        autohide = true;
         show-recents = false;
         persistent-apps = [
           "/Applications/Firefox.app"
