@@ -8,6 +8,7 @@
     phpactor
     typescript
     typescript-language-server
+    nodePackages.cspell
   ];
   programs.nixvim = {
     globals = {
@@ -104,7 +105,20 @@
       transparent = {
         enable = true;
       };
-
+      illuminate = {
+        enable = true;
+      };
+      colorizer = {
+        enable = true;
+      };
+      todo-comments = {
+        enable = true;
+      };
+      # 起動時メニュー
+      alpha = {
+        enable = true;
+        theme = "dashboard";
+      };
       nvim-autopairs = {
         enable = true;
         lazyLoad = {
@@ -161,6 +175,9 @@
           };
         };
       };
+      cmp-spell = {
+        enable = true;
+      };
       noice = {
         enable = true;
       };
@@ -215,7 +232,7 @@
       emmet = {
         enable = false;
       };
-      # laugnages
+      # languages
       lsp = {
         enable = true;
         servers = {
@@ -244,6 +261,9 @@
         lintersByFt = { };
       };
       typescript-tools = {
+        enable = true;
+      };
+      comment = {
         enable = true;
       };
     };
