@@ -62,6 +62,10 @@
       autoUpdate = true;
     };
     brews = [
+      "meta-xr-simulator"
+    ];
+    taps = [
+      "Oculus-VR/tap"
     ];
     casks = [
       "firefox"
