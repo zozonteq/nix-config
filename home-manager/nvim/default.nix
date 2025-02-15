@@ -42,7 +42,7 @@
     clipboard = {
       register = "unnamedplus";
     };
-    colorschemes.cyberdream.enable = true;
+    colorschemes.base16.enable = true;
     plugins = {
       # lazy loader
       lz-n = {
@@ -53,6 +53,8 @@
       };
       presence-nvim = {
         enable = true;
+        workspaceText = "Working on private project";
+        editingText = "Editing %s";
       };
       # statusbar
       lualine = {
@@ -259,9 +261,6 @@
       lint = {
         enable = false;
         lintersByFt = { };
-      };
-      typescript-tools = {
-        enable = true;
       };
       comment = {
         enable = true;
