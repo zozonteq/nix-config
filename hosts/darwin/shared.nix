@@ -81,6 +81,7 @@
       "keycastr"
       "alt-tab"
       "processing"
+      "flutter"
     ];
   };
 

@@ -11,4 +11,8 @@
     ../home-manager/docker.nix
     ../home-manager/nix-direnv.nix
   ];
+  home.sessionPath = [
+    "/opt/homebrew/bin"
+    "$PATH"
+  ];
 }
