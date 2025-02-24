@@ -156,6 +156,9 @@
       rainbow-delimiters = {
         enable = true;
       };
+      flutter-tools = {
+        enable = true;
+      };
       # cmp
       cmp = {
         enable = true;
@@ -256,6 +259,7 @@
           eslint = {
             enable = true;
           };
+          dartls.enable = true;
         };
       };
       lint = {
@@ -269,6 +273,7 @@
     extraPlugins = [
       pkgs.vimPlugins.typst-preview-nvim
       pkgs.vimPlugins.presence-nvim
+      pkgs.vimPlugins.plenary-nvim
     ];
 
   };
