@@ -24,7 +24,9 @@
     lsix
 
     # developing env
-    python3
+    python312Full
+    python312Packages.tkinter
+    python312Packages.pip
     bun
     deno
     # c
@@ -45,6 +47,8 @@
     # dev tools
     live-server
     android-tools # ADB, fastboot ...
+    # mac
+    cocoapods
 
     # utils
     ffmpeg
