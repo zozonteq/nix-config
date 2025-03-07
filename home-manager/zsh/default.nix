@@ -42,6 +42,9 @@
            echo "invalid command"
          fi
       }
+      yt-mp3(){
+        yt-dlp --extract-audio --audio-format mp3 $1
+      }
     '';
   };
   programs.starship = {

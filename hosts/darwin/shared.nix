@@ -82,6 +82,7 @@
       "alt-tab"
       "processing"
       "flutter"
+      "zed"
     ];
   };
 
