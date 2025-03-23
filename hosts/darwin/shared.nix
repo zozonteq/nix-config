@@ -57,7 +57,7 @@
   };
 
   homebrew = {
-    enable = true;
+    enable = false;
     onActivation = {
       autoUpdate = true;
     };
@@ -83,6 +83,7 @@
       "processing"
       "flutter"
       "zed"
+      "xpipe"
     ];
   };
 
