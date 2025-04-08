@@ -27,7 +27,9 @@
     python312Full
     python312Packages.tkinter
     python312Packages.pip
+    uv
     bun
+    nodejs
     deno
     # c
     gcc
@@ -49,6 +51,8 @@
     android-tools # ADB, fastboot ...
     # mac
     cocoapods
+    # csharp
+    dotnetCorePackages.sdk_9_0_1xx
 
     # utils
     ffmpeg
