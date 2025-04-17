@@ -22,11 +22,14 @@
     tmux
     imgcat
     lsix
+    sqlite
+    sqldiff
 
     # developing env
     python312Full
     python312Packages.tkinter
     python312Packages.pip
+    python312Packages.conda
     uv
     bun
     nodejs
@@ -93,6 +96,8 @@
     "grep" = "rg";
     "cls" = "clear";
     "v" = "nvim";
+    "vim" = "nvim";
+    "vi" = "nvim";
     "fz" = "fzf";
     "xa" = "xargs";
     "fzv" = "fzf | xargs vim";
