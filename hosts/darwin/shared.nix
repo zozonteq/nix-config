@@ -36,10 +36,10 @@
       dock = {
         autohide = true;
         show-recents = false;
-        persistent-apps = [
-          "/Applications/Firefox.app"
-          "/Applications/Discord.app"
-        ];
+        # persistent-apps = [
+        #   "/Applications/Firefox.app"
+        #   "/Applications/Discord.app"
+        # ];
         slow-motion-allowed = false;
         tilesize = 48;
 
