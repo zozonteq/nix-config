@@ -12,7 +12,11 @@
       workspaceText = "Working on private project";
       editingText = "Editing %s";
     };
+    vim-dadbod-ui = {
+      enable = true;
+    };
     lualine = {
+
       enable = true;
     };
     bufferline = {
