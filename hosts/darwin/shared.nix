@@ -1,14 +1,13 @@
 { pkgs, ... }:
 {
   nix = {
+    enable = true;
     optimise.automatic = true;
     settings = {
       experimental-features = "nix-command flakes";
       max-jobs = 8;
     };
   };
-  services.nix-daemon.enable = true;
-  security.pam.enableSudoTouchIdAuth = true;
 
   system = {
     stateVersion = 5;
@@ -57,7 +56,7 @@
   };
 
   homebrew = {
-    enable = false;
+    enable = true;
     onActivation = {
       autoUpdate = true;
     };
@@ -84,6 +83,7 @@
       "flutter"
       "zed"
       "xpipe"
+      "docker"
     ];
   };
 

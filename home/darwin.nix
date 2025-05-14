@@ -8,7 +8,7 @@
     ../home-manager/git
     ../home-manager/ollama
     ../home-manager/lima.nix
-    ../home-manager/docker.nix
+    # ../home-manager/docker.nix
     ../home-manager/nix-direnv.nix
   ];
   home.sessionPath = [
