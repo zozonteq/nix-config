@@ -82,8 +82,8 @@
       "processing"
       "flutter"
       "zed"
-      "xpipe"
-      "docker"
+      "podman"
+      "podman-desktop"
     ];
   };
 
