@@ -10,7 +10,7 @@
     presence-nvim = {
       enable = true;
       workspaceText = "Working on private project";
-      editingText = "Editing %s";
+      editingText = "Editing something";
     };
     vim-dadbod-ui = {
       enable = true;
