@@ -53,7 +53,7 @@
     live-server
     android-tools # ADB, fastboot ...
     # mac
-    cocoapods
+    #cocoapods
     # csharp
     dotnetCorePackages.sdk_9_0_1xx
 
