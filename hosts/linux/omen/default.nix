@@ -30,14 +30,14 @@
     packages = with pkgs; [
       ollama-cuda
     ];
-
   };
   services = {
     xserver.desktopManager.gnome.enable = true;
   };
-  # services.open-webui.enable = true;
-  services.ollama.enable = true;
-  services.ollama.acceleration = "cuda";
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda"; # Use CUDA for GPU acceleration
+  };
   imports = [
     ./hardware.nix
   ];

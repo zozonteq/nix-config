@@ -33,7 +33,7 @@ let
       stateVersion = "24.11";
     };
     programs.home-manager.enable = true;
-    nixpkgs.config.allowUnFree = true;
+    nixpkgs.config.allowUnfree = true;
   };
 
   # 共通のCLIパッケージ
