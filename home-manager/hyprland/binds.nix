@@ -9,6 +9,7 @@
       "$mainMod, Space, exec, rofi -show run"
       "$mainMod, H, workspace, -1"
       "$mainMod, L, workspace, +1"
+      "$mainMod, Tab, exec, hyprctl dispatch focus_prev"
     ];
     binde = [
       ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
