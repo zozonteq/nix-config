@@ -28,7 +28,7 @@
   outputs = { self, nixpkgs, home-manager, nixvim, nix-on-droid, nix-darwin, ... }@inputs:
     let
       # 共通設定をインポート
-      common = import ./lib/common.nix { inherit inputs; };
+      common = import ./lib/common.nix { };
 
       # 共通設定関数
       mkNixOnDroidConfig = hostName: modules:

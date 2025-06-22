@@ -31,5 +31,19 @@ in
         sha256 = "c17f97608988095705769dcebcd16b615097c2cce026c592dc1473dc39d95e38";
       };
     };
+    "${wallpaper_dir}/lain1.png" = {
+      target = "${wallpaper_dir}/lain1.png";
+      source = builtins.fetchurl {
+        url = "https://images3.alphacoders.com/848/848404.jpg";
+        sha256 = "cfcda91c5543fa0944f9706a801d1401cd59492e5998c08ce5ae7e95a2d47762";
+      };
+    };
+    "${wallpaper_dir}/lain2.png" = {
+      target = "${wallpaper_dir}/lain2.png";
+      source = builtins.fetchurl {
+        url = "https://images8.alphacoders.com/959/thumb-1920-959316.png";
+        sha256 = "9dfd61b64cbbe0573abe72175f415b1487b549233e730995a60bcb0cf0d05cf1";
+      };
+    };
   };
 }
