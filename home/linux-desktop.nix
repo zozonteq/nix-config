@@ -1,8 +1,7 @@
 { ... }:
+let
+  common = import ../lib/common.nix { };
+in
 {
-  imports = [
-    ../home-manager/gui
-    ../home-manager/hyprland
-    ../home-manager/barrier.nix
-  ];
+  imports = common.desktopModules;
 }

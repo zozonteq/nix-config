@@ -3,15 +3,6 @@
 }:
 let
   username = "user";
+  common = import ../lib/common.nix { };
 in
-{
-  imports = [ ../home-manager/default.nix ];
-  nixpkgs = {
-    config.allowUnFree = true;
-  };
-  home = {
-    username = username;
-    stateVersion = "24.11";
-  };
-  programs.home-manager.enable = true;
-}
+common.commonHomeSettings { inherit username; }
