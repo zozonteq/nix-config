@@ -94,7 +94,7 @@
     "lt" = "eza --icons --tree";
     "tl" = "eza --icons --tree";
     "grep" = "rg";
-    "cls" = "clear";
+    "cls" = "clear;ls";
     "v" = "nvim";
     "vim" = "nvim";
     "vi" = "nvim";
