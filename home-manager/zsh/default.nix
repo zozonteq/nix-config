@@ -30,7 +30,7 @@
         };
       }
     ];
-    initExtra = ''
+    initContent = ''
       ccr(){
         gcc $1;./a.out
       }
@@ -45,6 +45,7 @@
       yt-mp3(){
         yt-dlp --extract-audio --audio-format mp3 $1
       }
+      export PATH="/Users/user/.bun/bin:$PATH"
     '';
   };
   programs.starship = {
