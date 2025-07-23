@@ -62,6 +62,7 @@
     };
     brews = [
       "meta-xr-simulator"
+      "iproute2mac"
     ];
     taps = [
       "Oculus-VR/tap"
@@ -82,8 +83,6 @@
       "processing"
       "flutter"
       "zed"
-      "podman"
-      "podman-desktop"
     ];
   };
 
