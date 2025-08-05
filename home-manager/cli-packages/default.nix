@@ -81,6 +81,8 @@
 
     # cf
     cloudflared
+
+    openjdk
   ];
 
   home.shellAliases = {
