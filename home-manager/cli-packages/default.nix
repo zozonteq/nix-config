@@ -65,6 +65,7 @@
     scrcpy # ADB経由でAndroid端末を操作できる
     p7zip # 7zip
     w3m # cli web browser
+    gdb
 
     # formatters
     nixfmt-rfc-style # nix

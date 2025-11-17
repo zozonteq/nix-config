@@ -13,6 +13,6 @@
     discord
     slack
     obsidian
-    
+
   ];
 }
