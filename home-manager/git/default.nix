@@ -13,6 +13,7 @@
           showRandomTip = false;
           showIcons = true;
           showFileIcons = true;
+          nerdFontsVersion = "3";
           commitHashLength = 8;
           border = "rounded";
         };
