@@ -1,14 +1,8 @@
 # nix-config
 
-> [!IMPORTANT]
-> This nix config is unstable!
-
 My personal dotfiles for MacOS(darwin)/Linux/NixOS/Android(nix-on-droid) written by Nix.
 
-## 構造
-
-このリポジトリは以下のように整理されています：
-
+## File structure
 ### 共通設定 (`lib/common.nix`)
 - システム定義
 - 共通のNix設定
@@ -31,17 +25,10 @@ My personal dotfiles for MacOS(darwin)/Linux/NixOS/Android(nix-on-droid) written
 
 ### Home Manager設定 (`home-manager/`)
 - 各アプリケーションの設定
-- GUI、CLI、エディタなどの設定
+- GUI、CLI、エディタなどの設定(neovim,hyprland ...)
 
 ## セットアップ
 
 ```bash
 sh install_scripts/{HOSTNAME}.sh
 ```
-
-## リファクタリング内容
-
-- 重複コードの削減
-- 共通設定の抽出
-- より明確な構造化
-- 保守性の向上
