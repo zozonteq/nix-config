@@ -16,7 +16,6 @@
       enable = true;
     };
     lualine = {
-
       enable = true;
     };
     bufferline = {
@@ -209,6 +208,11 @@
         };
         dartls.enable = true;
         terraformls.enable = true;
+        rust_analyzer = {
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
       };
     };
     lint = {

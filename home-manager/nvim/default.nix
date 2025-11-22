@@ -10,7 +10,7 @@
   ];
   programs.nixvim = {
     enable = true;
-    colorschemes.base16.enable = true;
+    colorschemes.catppuccin.enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;

@@ -27,14 +27,16 @@ let
   };
 
   # 共通のHome設定
-  commonHomeSettings = { username }: {
-    home = {
-      inherit username;
-      stateVersion = "24.11";
+  commonHomeSettings =
+    { username }:
+    {
+      home = {
+        inherit username;
+        stateVersion = "24.11";
+      };
+      programs.home-manager.enable = true;
+      nixpkgs.config.allowUnfree = true;
     };
-    programs.home-manager.enable = true;
-    nixpkgs.config.allowUnfree = true;
-  };
 
   # 共通のCLIパッケージ
   commonCliModules = [
@@ -42,6 +44,7 @@ let
     ../home-manager/nvim
     ../home-manager/zsh
     ../home-manager/git
+    ../home-manager/tmux
   ];
 
   # デスクトップ用の追加モジュール
@@ -58,12 +61,14 @@ let
     ../home-manager/nix-direnv.nix
   ];
 
-in {
+in
+{
   inherit
     systems
     commonNixSettings
     commonHomeSettings
     commonCliModules
     desktopModules
-    darwinModules;
-} 
+    darwinModules
+    ;
+}
