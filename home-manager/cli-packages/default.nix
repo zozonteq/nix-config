@@ -35,7 +35,7 @@
     nodejs
     deno
     # c
-    gcc
+    # gcc
     cmake
     # lua
     lua
@@ -84,6 +84,9 @@
     cloudflared
 
     openjdk
+
+    rustup
+    qemu
   ];
 
   home.shellAliases = {
