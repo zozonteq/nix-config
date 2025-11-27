@@ -1,6 +1,6 @@
 # 共通設定とユーティリティ関数
-{ ... }:
 
+{ ... }:
 let
   # システム定義
   systems = {
@@ -32,7 +32,7 @@ let
     {
       home = {
         inherit username;
-        stateVersion = "24.11";
+        stateVersion = "25.05";
       };
       programs.home-manager.enable = true;
       nixpkgs.config.allowUnfree = true;
@@ -51,7 +51,7 @@ let
   desktopModules = [
     ../home-manager/gui
     ../home-manager/hyprland
-    ../home-manager/barrier.nix
+   
   ];
 
   # Darwin用の追加モジュール

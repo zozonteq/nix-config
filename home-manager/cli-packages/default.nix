@@ -26,7 +26,7 @@
     sqldiff
 
     # developing env
-    python312Full
+    python312
     python312Packages.tkinter
     python312Packages.pip
     python312Packages.conda

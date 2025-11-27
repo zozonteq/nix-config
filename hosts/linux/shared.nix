@@ -33,24 +33,24 @@
         fcitx5-gtk
       ];
     };
-    defaultLocale = "ja_JP.UTF-8";
+    defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_ADDRESS = "ja_JP.UTF-8";
-      LC_IDENTIFICATION = "ja_JP.UTF-8";
-      LC_MEASUREMENT = "ja_JP.UTF-8";
-      LC_MONETARY = "ja_JP.UTF-8";
-      LC_NAME = "ja_JP.UTF-8";
-      LC_NUMERIC = "ja_JP.UTF-8";
-      LC_PAPER = "ja_JP.UTF-8";
-      LC_TELEPHONE = "ja_JP.UTF-8";
-      LC_TIME = "ja_JP.UTF-8";
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
     };
   };
   fonts = {
     fonts = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       hackgen-nf-font
       monocraft
     ];
@@ -81,7 +81,10 @@
   };
 
   services.xserver.enable = true;
-  services.displayManager.ly.enable = true;
+  services.xserver.desktopManager.plasma6 = {
+    enable = true;
+  };
+  services.displayManager.sddm.enable = true;
 
   services.printing.enable = true;
 
@@ -112,6 +115,7 @@
       kdePackages.kate
       kitty
     ];
+    initialPassword = "hello";
     shell = pkgs.zsh;
   };
 

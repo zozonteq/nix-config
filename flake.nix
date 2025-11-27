@@ -1,6 +1,10 @@
 {
+  nixConfig = {
+    extra-substituters = ["https://cache.soopy.moe"];
+    extra-trusted-public-keys = ["cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="];
+  };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,9 +27,10 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     ags.url = "github:Aylur/ags";
     ghostty.url = "github:ghostty-org/ghostty";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nix-on-droid, nix-darwin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, nix-on-droid, nix-darwin,nixos-hardware, ... }@inputs:
     let
       # 共通設定をインポート
       common = import ./lib/common.nix { };
@@ -137,6 +142,9 @@
         omen = mkNixOSConfig "omen" common.systems.x86_64-linux (
           [ ./hosts/linux/omen ] ++ commonLinuxModules
         );
+        mbp-nixos = mkNixOSConfig "mbp-nixos" common.systems.x86_64-linux (
+          [ ./hosts/linux/mbp-nixos nixos-hardware.nixosModules.apple-t2] ++ commonLinuxModules
+        );
       };
 
       # home-manager設定
@@ -154,6 +162,7 @@
         elitedesk = mkHomeConfig "elitedesk" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
         g7 = mkHomeConfig "g7" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
         omen = mkHomeConfig "omen" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
+        mbp-nixos = mkHomeConfig "mbp-nixos" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
 
         # サーバーLinux設定
         linux-server1 = mkHomeConfig "linux-server1" common.systems.aarch64-darwin serverLinuxModules {} {};

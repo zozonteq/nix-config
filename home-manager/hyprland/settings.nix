@@ -19,6 +19,8 @@
     };
     input = {
       kb_layout = "jp";
+      sensitivity = 0.5;
+      touchpad.natural_scroll = true;
     };
     monitor = [
       ",prefered,auto,1"
