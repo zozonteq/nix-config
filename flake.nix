@@ -145,6 +145,10 @@
         mbp-nixos = mkNixOSConfig "mbp-nixos" common.systems.x86_64-linux (
           [ ./hosts/linux/mbp-nixos nixos-hardware.nixosModules.apple-t2] ++ commonLinuxModules
         );
+
+        x1 = mkNixOSConfig "x1" common.systems.x86_64-linux (
+          [ ./hosts/linux/x1 ] ++ commonLinuxModules
+        );
       };
 
       # home-manager設定
@@ -162,6 +166,7 @@
         elitedesk = mkHomeConfig "elitedesk" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
         g7 = mkHomeConfig "g7" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
         omen = mkHomeConfig "omen" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
+        x1 = mkHomeConfig "x1" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
         mbp-nixos = mkHomeConfig "mbp-nixos" common.systems.x86_64-linux desktopLinuxModules desktopLinuxPkgsConfig desktopLinuxSpecialArgs;
 
         # サーバーLinux設定

@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }:
 {
@@ -81,9 +82,7 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.desktopManager.plasma6 = {
-    enable = true;
-  };
+  
   services.displayManager.sddm.enable = true;
 
   services.printing.enable = true;
@@ -122,6 +121,7 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.hyprland.enable = true;
+  # programs.ssh.askPassword = lib.mkDefault pkgs.kdePackages.ksshaskpass;
   environment.systemPackages = [
     pkgs.easyeffects
   ];
